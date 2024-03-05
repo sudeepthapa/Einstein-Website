@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: #d9a62e;
+    --bg-color-accent: #fffbea;
+    --text-color-dark: #090a0c;
+    --text-color-light: #555a64;
+    --white: #ffffff;
+}
+
+*,
+html {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    grid-template-areas:
+        "navs navs"
+        "hero hero"
+        "about-me about-me"
+        "research-papers research-papers"
+        "experiences hobbies"
+        "achievements achievements"
+        "image-gallery image-gallery"
+        "blogs blogs"
+        "footer footer"
+    ;
+    max-width: 1800px;
+}
+
+
+/* Common Styles */
+.wrapper {
+    padding: 40px 120px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.section-title {
+    font-size: 28px;
+}
+
+.section-title div {
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.section-content {
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-area: navs;
+}
+
+#menus,
+#menus a {
+    text-decoration: none;
+    list-style-type: none;
+    color: var(--text-color-dark);
+    font-weight: 600;
+    padding: 8px 16px;
+}
+
+#menus a {
+    cursor: pointer;
+    transition: color .2s ease-in-out;
+}
+
+#hamburgur-icon {
+    display: none;
+}
+
+#menus a:hover {
+    color: var(--primary-color);
+}
+
+#menus {
+    display: flex;
+    justify-content: end;
+}
+
+#nav-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-icons img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Hero Section */
+#hero {
+    grid-area: hero;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+#hero-image {
+    border-radius: 50%;
+    background-color: black;
+    overflow: hidden;
+}
+
+
+#hero-content {
+    padding: 30px 60px 30px 0px
+}
+
+#hero-content h2 {
+    font-size: 42px;
+    padding: 10px 0px;
+}
+
+#hero-content p {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#hero-content .quote {
+    font-style: italic;
+    margin-top: 40px;
+    border-left: 2px solid var(--text-color-light);
+    padding: 10px
+}
+
+#hero-content p span {
+    color: var(--primary-color);
+}
+
+/* About Me Section */
+#about-me {
+    grid-area: about-me;
+    background-color: var(--bg-color-accent);
+}
+
+#about-me-image {
+    flex: 1;
+    height: 400px;
+}
+
+#about-me .about-me-content {
+    flex: 1;
+}
+
+#about-me .about-me-content p {
+    padding: 8px 16px;
+}
+
+/* Research Paper Section */
+#research-papers {
+    grid-area: research-papers;
+}
+
+.research-paper {
+    border: 1px solid rgb(211, 211, 211);
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    background-color: #fbfbfb;
+    box-shadow: 0 0 10px 5 rgb(211, 211, 211);
+}
+
+.research-paper .paper-image img {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.paper-content {
+    padding: 8px
+}
+
+.paper-content .date {
+    font-size: 0.8em;
+}
+
+/* Experiences Section */
+
+#experiences {
+    background-color: var(--bg-color-accent);
+    grid-area: experiences;
+}
+
+#experiences.wrapper,
+#hobbies.wrapper {
+    padding-right: 0px;
+}
+
+.experience,
+.hobby {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.experience-date {
+    padding: 8px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--white);
+    background-color: var(--white);
+    margin-right: 16px;
+}
+
+/* Hobbies Section */
+
+#hobbies {
+    grid-area: hobbies;
+    padding-left: 0px;
+}
+
+.hobby div,
+.achievement .counter {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--text-color-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--text-color-dark);
+    margin-right: 16px;
+}
+
+/* Achievements Section */
+#achievements {
+    grid-area: achievements;
+}
+
+.achievement {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.achievement .counter {
+    min-width: 50px;
+    min-height: 50px;
+    border: 2px solid var(--text-color-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--text-color-dark);
+    margin-right: 16px;
+}
+
+.achievement-content h6 {
+    font-size: 16px;
+}
+
+/* Gallery Section */
+#image-gallery{
+    grid-area: image-gallery;
+}
+
+#gallery-contents{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+#gallery-contents img{
+    object-fit: cover;
+    padding: 12px;
+    width: 300px;
+    height: 300px;
+}
+
+/* Blogs Section */
+
+#blogs {
+    background-color: var(--bg-color-accent);
+    grid-area: blogs;
+}
+
+#blog-articles {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: "blog-article-1 blog-article-2 blog-article-3 blog-article-4";
+}
+
+#blog-article-1 {
+    grid-row: blog-article-1;
+}
+
+#blog-article-2 {
+    grid-row: blog-article-2;
+}
+
+#blog-article-3 {
+    grid-row: blog-article-3;
+}
+
+#blog-article-4 {
+    grid-row: blog-article-4;
+}
+
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.blog-content {
+    padding: 16px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    background-color: var(--white);
+}
+
+.blog-content h6 {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color-dark);
+}
+
+.blog-content .description {
+    font-size: 14px;
+    margin-bottom: 10px;
+
+}
+
+.blog-content a {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.blog-content p {
+    margin-bottom: 8px;
+}
+
+/* Footer Section */
+#footer {
+    grid-area: footer;
+    background-color: var(--text-color-light);
+}
+
+#footer p {
+    color: var(--white);
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    #container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        grid-template-areas:
+            "navs"
+            "hero"
+            "about-me"
+            "research-papers"
+            "experiences"
+            "hobbies"
+            "achievements"
+            "image-gallery"
+            "blogs"
+            "footer"
+        ;
+    }
+
+    .wrapper {
+        padding: 30px 30px;
+    }
+
+    /* Responsive Menu */
+
+    #menus li {
+        display: none;
+    }
+
+
+    #menus.responsive li {
+        display: block;
+        text-align: left;
+        margin: 20px 0px;
+    }
+
+    #hamburgur-icon {
+        display: block;
+    }
+
+    #navbar {
+        display: block;
+    }
+
+    #menus.responsive {
+        display: block;
+        background-color: var(--bg-color-accent);
+    }
+
+    #menus {
+        background-color: white;
+        display: none;
+    }
+
+    /* Responsive Menu End */
+
+    #hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        height: 100%;
+    }
+
+    #hero.wrapper {
+        padding-top: 0;
+    }
+
+    #hero-content {
+        padding: 30px 0 0 0;
+    }
+
+    #about-me .section-content {
+        flex-direction: column;
+    }
+
+    #about-me .about-me-content p {
+        padding: 8px 0px;
+        text-align: justify;
+    }
+
+    #hobbies {
+        padding: 30px 30px;
+    }
+
+    #blog-articles {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "blog-article-1 blog-article-2" "blog-article-3 blog-article-4";
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #blog-articles {
+        grid-template-areas:
+            "blog-article-1" "blog-article-2" "blog-article-3" "blog-article-4";
+    }
+
+    .blog-image {
+        height: 300px;
+    }
+
+    .research-paper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
